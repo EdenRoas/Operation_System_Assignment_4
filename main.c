@@ -7,7 +7,7 @@
 #include <sys/wait.h>
 
 
-#define NUM 1000000
+#define NUM 1000
 int pipefd[2];
 int shared_resource = 0;
 pthread_cond_t cond;
@@ -87,6 +87,7 @@ void fcntl1() {
                 perror("fcntl");
             }
             close(fd);
+            exit(0);
         }
     } else {
         wait(NULL);
@@ -183,8 +184,8 @@ void pipe1() {
 int main() {
 
     mutex1();
-    pipe1();
     cond1();
     fcntl1();
+    pipe1();
     return 0;
 }
