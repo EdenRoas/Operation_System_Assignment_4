@@ -7,7 +7,7 @@
 #include <sys/wait.h>
 
 
-#define NUM 1000
+#define NUM 1000000
 int pipefd[2];
 int shared_resource = 0;
 pthread_cond_t cond;
